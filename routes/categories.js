@@ -9,7 +9,7 @@ router.use(bodyParser.urlencoded({
 
 router.get("/", (req, res) => {
     try {
-            res.render('layouts/home', {
+            res.render('home/home', {
             });
     }
     catch (err) {
