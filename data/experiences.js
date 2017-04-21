@@ -19,7 +19,7 @@ var exportedMethods = {
         });
     },
     newExperience(title, category, initReviewText, initReviewRating, initReviewTitle, dateOfExp, userId) {
-        categoryData.checkCatExists(category);
+        //categoryData.checkCatExists(category);
         var newExp = {
                 _id: uuid.v6(), 
                 name: title,
