@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/../../public/add_exp.css">
     <title>Add an Experience</title>
 </head>
 <body>
@@ -20,17 +21,18 @@
             <fieldset>
                 <legend>Add an Experience</legend>
                 <input type="text" name="id" id="id" value="{{id}}" style="display:none" readonly>
-                <label for="title">Experience Title</label>
+                <label for="title">Experience Name</label>
                 <input type="text" name="title" required>
                 <label for="categories">Select a Category</label>
                 <select  name = "categories">{{#each category}}
                     <option value = "category">category</option>
-                </select>{{/each}}
-                <label for="review title"> Review Title</label>
-                <input type="text" name="review title" required>
-                <label for="review text">Type Here</label>
-                <input type="text" name="review text" required>
-                <label for="rating">Rating</label>
+                    {{/each}}
+                </select>
+                <label for="review_title">Please Give your Review a Title</label>
+                <input type="text" name="review_title" required>
+                <label for="review_text">Describe Your Experience Here</label>
+                <input type="text" name="review_text" required>
+                <label for="rating">How Would you Rate your Experience?</label>
                 <select name="rating">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -43,8 +45,8 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <label for="review date"> Date of Experience</label>
-                <input type="date" name="review date" required>
+                <label for="review_date"> Date of Experience</label>
+                <input type="date" name="review_date" required>
                 <label for="submit">Submit</label>
                 <input type="submit" id="submit">
             </fieldset>

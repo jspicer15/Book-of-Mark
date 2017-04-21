@@ -28,7 +28,14 @@ router.get("/:experienceId", (req, res) => {
 });
 
 router.post("/add", (req, res) => {
-    return;
+    var postData = req.body;
+    var id = postData.id;
+    try {
+        experienceData.newExperience(postData.title, postData.categories, postData.review_title, postData.review_text, postData.rating, postData.review_date, postData.id);
+        res.redirect("/experience");
+}
+    catch (err) {
+        res.status(500).send('Server Error:' + err);
+    }
 });
-
 module.exports = router;

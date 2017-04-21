@@ -21,12 +21,12 @@ var exportedMethods = {
     newExperience(title, category, initReviewText, initReviewRating, initReviewTitle, dateOfExp, userId) {
         //categoryData.checkCatExists(category);
         var newExp = {
-                _id: uuid.v6(), 
+                _id: uuid.v4(), 
                 name: title,
                 category: category,
                 addedOn: new Date().getTime(),
                 reviews: {
-                    _id: uuid.v6(),
+                    _id: uuid.v4(),
                     user: userId,
                     text: initReviewText,
                     rating: initReviewRating,
@@ -38,6 +38,7 @@ var exportedMethods = {
         };
         return experiences().then((expCollection) => {
             return expCollection.insertOne(newExp).then(() => {
+                console.log(newExp);
                 return;
             });
         });
