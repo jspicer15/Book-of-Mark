@@ -12,14 +12,6 @@ body {
     flex: 1;
 }
 
-.is-palindrome {
-    color: blue;
-}
-
-.not-palindrome {
-    color: red;
-}
-
 header {
     background-color: salmon;
 }
