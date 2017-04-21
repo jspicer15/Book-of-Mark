@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/styles.css">
     <title>Add an Experience</title>
 </head>
 <body>
@@ -18,17 +17,37 @@
             </nav>
         </header>
         <form action="http://localhost:3000/experience/add" method="POST">
-            <h2>Add an Experience</h2>
-            <input type="text" name="id" id="id" value="{{id}}" style="display:none" readonly>
-            <input type="text" name="Title" required>
-            <select  name = "Categories">{{#each category}}
-                <option value = "category">category</option>
-            </select>{{/each}}
-            <input type="text" name="Review Title" required>
-            <input type="text" name="Review Text" required>
-            <input type="text" name="Review Rating" required>
-            <input type="text" name="Review Date" required>
-            <input type="submit" id="submit">
+            <fieldset>
+                <legend>Add an Experience</legend>
+                <input type="text" name="id" id="id" value="{{id}}" style="display:none" readonly>
+                <label for="title">Experience Title</label>
+                <input type="text" name="title" required>
+                <label for="categories">Select a Category</label>
+                <select  name = "categories">{{#each category}}
+                    <option value = "category">category</option>
+                </select>{{/each}}
+                <label for="review title"> Review Title</label>
+                <input type="text" name="review title" required>
+                <label for="review text">Type Here</label>
+                <input type="text" name="review text" required>
+                <label for="rating">Rating</label>
+                <select name="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <label for="review date"> Date of Experience</label>
+                <input type="date" name="review date" required>
+                <label for="submit">Submit</label>
+                <input type="submit" id="submit">
+            </fieldset>
         </form>
     </div>
     <footer>
