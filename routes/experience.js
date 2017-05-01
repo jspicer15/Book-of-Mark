@@ -10,7 +10,7 @@ router.use(bodyParser.urlencoded({
 
 router.get("/", (req, res) => {
     try {
-            res.render('experiences/add_exp', {experiences : experienceData.getAllExperiences()});
+            res.render('experiences/add_exp');
     }
     catch (err) {
         res.status(500).send('Server Error:' + err);
@@ -20,7 +20,9 @@ router.get("/", (req, res) => {
 
 router.get("/:experienceId", (req, res) => {
     try {
-            res.render('experiences/singleExp', {experience: experienceData.getExperienceById(req.params.experienceId)});
+        experienceData.getExperienceById(req.params.experienceId).then((experience) => {
+            res.render('experiences/single_exp', {experience: experience});
+        });
     }
     catch (err) {
         res.status(500).send('Server Error:' + err);

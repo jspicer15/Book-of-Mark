@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const data = require("../data");
+const experienceData = data.experiences;
 
 router.use(bodyParser.urlencoded({
     extended: true
@@ -9,8 +10,10 @@ router.use(bodyParser.urlencoded({
 
 router.get("/", (req, res) => {
     try {
-            res.render('home/home', {
-            });
+        experienceData.getAllExperiences().then((experienceList) => {
+            console.log(experienceList);
+            res.render('categories/home', {experiences : experienceList});
+        });
     }
     catch (err) {
         res.status(500).send('Server Error:' + err);

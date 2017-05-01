@@ -13,8 +13,8 @@ var exportedMethods = {
     getExperienceById(id) {
         return experiences().then((expCollection) => {
             return expCollection.findOne({_id : id}).then((experience) => {
-                if (!experience) throw "User Not Found";
-                return user;
+                if (!experience) throw "Experience Not Found";
+                return experience;
             });
         });
     },

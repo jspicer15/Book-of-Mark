@@ -1,11 +1,13 @@
 const mongoCollections = require("../config/mongoCollections");
-const terms = mongoCollections.terms;
+const experiences = mongoCollections.experiences;
 const uuid = require('node-uuid');
+const data = require('../data');
+const experienceData = data.experiences;
 
 var exportedMethods = {
     getAllTerms() {
-        return terms().then((termCollection) => {
-            return termCollection.find({}).toArray();
+        return experiences().then((experienceCollectino) => {
+            return experienceCollection.find({}).toArray();
         });
     }, 
     newTerm(term, bool) {

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/home.css">
+    <title>Account - Book of Mark</title>
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/account">Account</a></li>
+                    <li><a href="/categories">Categories</a></li>
+                </ul>
+            </nav>
+        </header>
+        <ul>
+            <p class="List of Top Experiences">Today's Top Experiences</p>{{#each experiences}}
+            <li>
+                <p><a href="/experience/{{_id}}">{{name}}</a> {{reviews}}</p>
+            </li> {{/each}} </ul>
+    </div>
+    <footer>
+        <p>Book of Mark Copyright 2017</p>
+    </footer>
+</body>
+
+</html>
