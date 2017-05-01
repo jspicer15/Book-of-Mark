@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
     try {
         experienceData.getAllExperiences().then((experienceList) => {
             console.log(experienceList);
-            res.render('categories/home', {experiences : experienceList});
+            res.render('categories/categories_home', {experiences : experienceList});
         });
     }
     catch (err) {
