@@ -21,6 +21,27 @@ footer {
     text-align: center;
 }
 
+label {
+    float: left;
+    margin-right: 0.5em;
+    text-align: right;
+    font-weight: bold;
+    width: 10em;
+}
+
+fieldset {
+    border: 1px solid;
+    padding-top: 0em;
+    margin-top: 1em;
+}
+
+legend {
+    padding: 0.2em 0.2em;
+    border: 1px solid;
+    font-size: 90%;
+    text-align: right;
+}
+
 nav ul {
     margin: 0em;
     text-align: center;
@@ -31,24 +52,12 @@ nav ul li {
     margin: 1em;
 }
 
-label {
-    float: left;
-    margin-right: 0.5em;
-    text-align: right;
-    font-weight: bold;
+
+#textInput {
+    display: flex;
+    margin-bottom: 1em;
 }
 
-fieldset {
-    border: 1px solid green
-}
-
-legend {
-    padding: 0.2em 0.5em;
-    border: 1px solid green;
-    color: green;
-    font-size: 90%;
-    text-align: right;
-}
 
 
 

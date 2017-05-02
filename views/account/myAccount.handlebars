@@ -18,14 +18,14 @@
                 </ul>
             </nav>
         </header>
-        <div id="Info" style="display:block;">
+        <div style="display:block;">
             <form action="http://localhost:3000/account/update" method="POST">
                 <fieldset>
                     <legend>Update Account Info</legend>
-                    <label for="bio">Biography: </label>
-                    <p>Current: {{bio}}</p>
+                    <label for="bio">Update Biography: </label>
                     <input type="text" name="bio" id="bio">
-                    <label for="password">Password: </label>
+                    <p id = "currBio">Current Biography: {{bio}}</p>
+                    <label for="password">Update Password: </label>
                     <input type="password" name="password" id="password">
                     <input type="text" name="id" id="id" value="{{id}}" style="display:none" readonly>
                     <input type="submit" id="submit"> </fieldset>
