@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/myAccount.css">
-    <title>Account - Book of Mark</title>
+    <title>My Account - Book of Mark</title>
 </head>
 
 <body>
@@ -32,6 +32,15 @@
                     <input type="submit" id="submit"> </fieldset>
             </form>
         </div>
+        <div>
+            <h2>My Experiences</h2>
+            <ul>
+            {{#each experiences}}
+                <li></li>
+            {{/each}}
+            </ul>
+        </div>
+        <a href="/experience"><button>Add Experience</button></a>
     </div>
     <footer>
         <p>Book of Mark Copyright 2017</p>
