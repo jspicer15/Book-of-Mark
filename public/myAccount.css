@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    background-color: salmon;
+    background-color: MediumSeaGreen;
 }
 
 footer {
@@ -26,7 +26,11 @@ label {
     margin-right: 0.5em;
     text-align: right;
     font-weight: bold;
-    width: 10em;
+    width: 9em;
+}
+
+nav {
+    margin-bottom: 1em;
 }
 
 fieldset {
@@ -56,4 +60,3 @@ nav ul li {
     display: flex;
     margin-bottom: 1em;
 }
-
