@@ -26,7 +26,7 @@ label {
     margin-right: 0.5em;
     text-align: right;
     font-weight: bold;
-    width: 9em;
+    width: 10em;
 }
 
 nav {
@@ -34,7 +34,6 @@ nav {
 }
 
 fieldset {
-    display: flex;
     border: 1px solid;
     padding-top: 0em;
 }
@@ -44,6 +43,10 @@ legend {
     border: 1px solid;
     font-size: 90%;
     text-align: right;
+}
+
+label p {
+    font-weight: normal;
 }
 
 nav ul {
@@ -59,4 +62,12 @@ nav ul li {
 #textInput {
     display: flex;
     margin-bottom: 1em;
+}
+
+#currBio {
+    margin-top: 0em;
+}
+
+#expButton {
+    margin: 1em 0em;
 }

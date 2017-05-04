@@ -2,24 +2,63 @@ html {
     height: 100%;
 }
 
-header {
-    background-color: MediumSeaGreen;   
-}
-
 body {
     min-height: 100%;
     display: flex;
     flex-direction: column;
 }
 
+.content {
+    flex: 1;
+}
+
+header {
+    background-color: MediumSeaGreen;
+}
+
 footer {
     background-color: beige;
-}
-
-footer p {
     text-align: center;
 }
 
-h1 {
+label {
+    float: left;
+    margin-right: 0.5em;
+    text-align: right;
+    font-weight: bold;
+}
+
+nav {
+    margin-bottom: 1em;
+}
+
+fieldset {
+    border: 1px solid;
+    padding-top: 0em;
+}
+
+legend {
+    padding: 0.2em 0.2em;
+    border: 1px solid;
+    font-size: 90%;
+    text-align: right;
+}
+
+label p {
+    font-weight: normal;
+}
+
+nav ul {
+    margin: 0em;
     text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 1em;
+}
+
+#textInput {
+    display: flex;
+    margin-bottom: 1em;
 }

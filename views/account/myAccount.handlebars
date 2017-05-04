@@ -23,11 +23,11 @@
                 <fieldset>
                     <legend>Update Account Info</legend>
                     <label for="bio">Update Biography: </label>
-                    <input type="text" name="bio" id="bio">
+                    <input type="text" name="bio" id="textInput">
                     <label for = "currBio">Current Biography: </label>
-                    <p>{{bio}}</p>
+                    <p id = "currBio">{{bio}}</p>
                     <label for="password">Update Password: </label>
-                    <input type="password" name="password" id="password">
+                    <input type="password" name="password" id="textInput">
                     <input type="text" name="id" id="id" value="{{id}}" style="display:none" readonly>
                     <input type="submit" id="submit"> </fieldset>
             </form>
@@ -40,7 +40,7 @@
             {{/each}}
             </ul>
         </div>
-        <a href="/experience"><button>Add Experience</button></a>
+        <a href="/experience" id = "expButton"><button>Add Experience</button></a>
     </div>
     <footer>
         <p>Book of Mark Copyright 2017</p>
