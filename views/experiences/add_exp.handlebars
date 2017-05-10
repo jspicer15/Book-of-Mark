@@ -19,22 +19,22 @@
         </header>
         <form action="http://localhost:3000/experience/add" method="POST">
             <fieldset>
-                <legend>Add an Experience</legend>
+                <legend>Add an Experience: </legend>
                 <input type="text" name="id" id="id" value="{{id}}" style="display:none" readonly>
-                <label for="title">Experience Name</label>
-                <input type="text" name="title" required>
-                <label for="categories">Select a Category</label>
-                <select  name = "categories" required>{{#each categories}}
+                <label for="title">Experience Name: </label>
+                <input type="text" name="title" id = "input" required>
+                <label for="categories">Select a Category: </label>
+                <select  name = "categories" id = "input" required>{{#each categories}}
                     <option value = "{{name}}">{{name}}</option>
                     {{/each}}
                 </select>
-                <p>Don't see the category you want? <a href="/categories/add"> Add Category</a> Add the one you want.</p>
-                <label for="review_title">Please Give your Review a Title</label>
-                <input type="text" name="review_title" required>
-                <label for="review_text">Describe Your Experience Here</label>
-                <input type="text" name="review_text" required>
-                <label for="rating">How Would you Rate your Experience?</label>
-                <select name="rating">
+                <p>Don't see the category you want? Add the one you want <a href="/categories/add">here</a>.</p>
+                <label for="review_title">Please Give your Review a Title: </label>
+                <input type="text" name="review_title" id = "input" required>
+                <label for="review_text">Describe Your Experience Here: </label>
+                <input type="text" name="review_text" id = "input" required>
+                <label for="rating">How Would you Rate your Experience? </label>
+                <select name="rating" id = "input">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -46,8 +46,8 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <label for="review_date"> Date of Experience</label>
-                <input type="date" name="review_date" required>
+                <label for="review_date"> Date of Experience: </label>
+                <input type="date" name="review_date" id = "input" required>
                 <input type="submit" id="submit">
             </fieldset>
         </form>

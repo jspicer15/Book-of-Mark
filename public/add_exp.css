@@ -23,9 +23,9 @@ footer {
 
 label {
     float: left;
-    margin-right: 0.5em;
     text-align: right;
     font-weight: bold;
+    margin-right: 1em;
 }
 
 nav {
@@ -44,10 +44,6 @@ legend {
     text-align: right;
 }
 
-label p {
-    font-weight: normal;
-}
-
 nav ul {
     margin: 0em;
     text-align: center;
@@ -58,7 +54,7 @@ nav ul li {
     margin: 1em;
 }
 
-#textInput {
+#input {
     display: flex;
     margin-bottom: 1em;
 }
