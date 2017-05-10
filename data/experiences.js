@@ -25,7 +25,7 @@ var exportedMethods = {
                 name: title,
                 category: category,
                 addedOn: new Date().getTime(),
-                reviews: {
+                reviews: [{
                     _id: uuid.v4(),
                     user: userId,
                     text: initReviewText,
@@ -34,7 +34,7 @@ var exportedMethods = {
                     likes: 0,
                     createdOn: new Date().getTime(),
                     dateOf: dateOfExp
-                },
+                }],
             likes: 0
         };
         return experiences().then((expCollection) => {
@@ -43,7 +43,20 @@ var exportedMethods = {
                 return;
             });
         });
-    }
+    },
+    
+    getAllReviews(id) {
+    return experiences().then((expCollection) => {
+    return expCollection.findOne({_id : id}).then((experience) => {
+        if (experience) {
+  console.log(experience.reviews);
+           return experience.reviews;
+        } else {
+            throw "Experience not found";
+        }
+    });
+});
+}
 }
 
 module.exports = exportedMethods;

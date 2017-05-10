@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/home.css">
-    <title>Account - Book of Mark</title>
+    <title>{{experience.name}} - Book of Mark</title>
 </head>
 
 <body>
@@ -18,10 +18,15 @@
                 </ul>
             </nav>
         </header>
-        <ul>
-            <p>{{experience.name}}</p>
-            <li>
-            </li></ul>
+            <p>{{experience.likes}}</p><h1>{{experience.category}}
+        </h1>
+        <h2>{{experience.name}}</h2>
+        <ul> <h3>Reviews:</h3>
+        {{#each reviews}}
+            <li><h4>{{title}}</h4>
+                <p>{{text}}</p>
+            </li>
+        {{/each}}</ul>
     </div>
     <footer>
         <p>Book of Mark Copyright 2017</p>
