@@ -20,7 +20,7 @@ function loggedIn(req, res, next) {
     if (req.user) {
        return next();
     } else {
-        res.redirect('/');
+        res.redirect('/account');
     }
 }
 
@@ -64,6 +64,11 @@ router.get("/", (req, res) => {
     catch (err) {
         res.status(500).send('Server Error:' + err);
     }
+});
+
+router.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/account");
 });
 
 router.get("/:username", (req, res) => {

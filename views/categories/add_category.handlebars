@@ -17,7 +17,7 @@
                 </ul>
             </nav>
         </header>
-        <form action="http://localhost:3000/categories/add" method="POST">
+        <form action="http://localhost:3000/categories/" method="POST">
             <fieldset>
                 <legend>Add a Category</legend>
                 <label for="title">Category Name</label>
@@ -27,10 +27,8 @@
                     <option value = "category">category</option>
                     {{/each}}
                 </select>
-                <label for="description"></label>
-                <input type="text" name="review_title" required>
-                <label for="review_text">Describe Your Experience Here</label>
-                <input type="text" name="review_text" required>
+                <label for="description">Description</label>
+                <input type="text" name="description">
                 <input type="submit" id="submit">
             </fieldset>
         </form>
