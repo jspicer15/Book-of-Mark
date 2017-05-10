@@ -24,8 +24,8 @@
                 <label for="title">Experience Name</label>
                 <input type="text" name="title" required>
                 <label for="categories">Select a Category</label>
-                <select  name = "categories">{{#each categories}}
-                    <option value = "category">category</option>
+                <select  name = "categories" required>{{#each categories}}
+                    <option value = "{{name}}">{{name}}</option>
                     {{/each}}
                 </select>
                 <p>Don't see the category you want? <a href="/categories/add"> Add Category</a> Add the one you want.</p>

@@ -36,9 +36,8 @@ router.get("/add", (req, res) => {
 router.post("/", (req, res) => {
     var postData = req.body;
     try {
-       categoryData.newCategory(postData.name, postData.parent, postData.description).then(() => {
-           res.redirect("/");
-       });
+       categoryData.newCategory(postData.title, postData.parent, postData.description);
+        res.redirect("/");
     }
     catch (err) {
         res.status(500).send('Server Error:' + err);

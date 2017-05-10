@@ -22,9 +22,10 @@
                 <legend>Add a Category</legend>
                 <label for="title">Category Name</label>
                 <input type="text" name="title" required>
-                <label for="categories">Select a Parent Category</label>
-                <select  name = "categories">{{#each categories}}
-                    <option value = "category">category</option>
+                <label for="parent">Select a Parent Category</label>
+                <select  name = "parent">
+                    <option value ="">None</option>{{#each categories}}
+                    <option value = "{{name}}">{{name}}</option>
                     {{/each}}
                 </select>
                 <label for="description">Description</label>

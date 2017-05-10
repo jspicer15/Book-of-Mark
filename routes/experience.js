@@ -3,6 +3,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const data = require("../data");
 const experienceData = data.experiences;
+const categoryData = data.categories;
 
 router.use(bodyParser.urlencoded({
     extended: true
@@ -10,7 +11,10 @@ router.use(bodyParser.urlencoded({
 
 router.get("/", (req, res) => {
     try {
-            res.render('experiences/add_exp');
+            categoryData.getAllCategories().then((categoryList) => {
+
+                res.render('experiences/add_exp', {categories : categoryList});
+        }); 
     }
     catch (err) {
         res.status(500).send('Server Error:' + err);

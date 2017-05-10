@@ -34,7 +34,8 @@ var exportedMethods = {
                     likes: 0,
                     createdOn: new Date().getTime(),
                     dateOf: dateOfExp
-                }
+                },
+            likes: 0
         };
         return experiences().then((expCollection) => {
             return expCollection.insertOne(newExp).then(() => {
