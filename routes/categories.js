@@ -36,17 +36,9 @@ router.get("/add", (req, res) => {
 router.post("/", (req, res) => {
     var postData = req.body;
     try {
-        if (checkPalindrome(postData.textInput)) {
-            termData.newTerm(postData.textInput, true).then(() => {
-                return;
-            });
-        }
-        else {
-            termData.newTerm(postData.textInput, false).then(() => {
-                return;
-            });
-        }
-        res.redirect("/");
+       categoryData.newCategory(postData.name, postData.parent, postData.description).then(() => {
+           res.redirect("/");
+       });
     }
     catch (err) {
         res.status(500).send('Server Error:' + err);
