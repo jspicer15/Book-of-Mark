@@ -33,6 +33,17 @@ router.get("/add", (req, res) => {
     }
 });
 
+router.get("/:categoryId", (req, res) => {
+    try {
+        categoryData.getCategoryById(req.params.categoryId).then((categoryList) => {
+            res.render('categories/single_category', {categories : categoryList});
+        });
+    }
+    catch (err) {
+        res.status(500).send('Server Error:' + err);
+    }
+});
+
 router.post("/", (req, res) => {
     var postData = req.body;
     try {
