@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/categories_home.css">
-    <title>Account - Book of Mark</title>
+    <link rel="stylesheet" href="/single_category.css">
+    <title>{{categoryList.name}} - Book of Mark</title>
 </head>
 
 <body>
@@ -19,14 +19,6 @@
                 </ul>
             </nav>
         </header>
-        <ul>
-            <p id = "cat">Categories:</p>{{#each categories}}
-            <li id ="catList">
-                <p><a href="/categoryList/{{_id}}">{{name}}</a> {{likes}}</p>
-            </li> {{/each}} </ul>
-    </div>
-    <div>
-    <p>Don't see the category you want? Add the one you want <a href="/categories/add">here</a>.</p>
     </div>
     <footer>
         <p>Book of Mark Copyright 2017</p>

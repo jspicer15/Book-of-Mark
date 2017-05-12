@@ -48,6 +48,6 @@ nav ul li {
     font-size: 150%;
 }
 
-.catList {
-    float: left;
+#catList {
+    font-size: 120%;
 }
