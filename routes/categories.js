@@ -11,7 +11,7 @@ router.use(bodyParser.urlencoded({
 
 router.get("/", (req, res) => {
     try {
-        categoryData.getAllExperiences().then((categoryList) => {
+        categoryData.getAllCategories().then((categoryList) => {
             console.log(categoryList);
             res.render('categories/categories_home', {categories : categoryList});
         });
