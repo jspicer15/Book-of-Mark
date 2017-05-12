@@ -80,7 +80,7 @@ div.tab button.active {
 }
 
 
-#textInput {
+#input {
     display: flex;
     margin-bottom: 1em;
 }

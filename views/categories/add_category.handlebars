@@ -21,16 +21,16 @@
         <form action="http://localhost:3000/categories/" method="POST">
             <fieldset>
                 <legend>Add a Category</legend>
-                <label for="title">Category Name</label>
-                <input type="text" name="title" required>
-                <label for="parent">Select a Parent Category</label>
-                <select  name = "parent">
+                <label for="title">Category Name: </label>
+                <input type="text" name="title" id = "input" required>
+                <label for="parent">Select a Parent Category: </label>
+                <select  name = "parent" id = "input">
                     <option value ="">None</option>{{#each categories}}
                     <option value = "{{name}}">{{name}}</option>
                     {{/each}}
                 </select>
-                <label for="description">Description</label>
-                <input type="text" name="description">
+                <label for="description">Description: </label>
+                <input type="text" name="description" id = "input">
                 <input type="submit" id="submit">
             </fieldset>
         </form>

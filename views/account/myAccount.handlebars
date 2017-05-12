@@ -24,13 +24,13 @@
                 <fieldset>
                     <legend>Update Account Info</legend>
                     <label for="bio">Update Biography: </label>
-                    <input type="text" name="bio" id="textInput">
+                    <input type="text" name="bio" id="input">
                     {{#if bio}}
                     <label for = "currBio">Current Biography: </label>
                     <p id = "currBio">{{bio}}</p>
                     {{/if}}
                     <label for="password">Update Password: </label>
-                    <input type="password" name="password" id="textInput">
+                    <input type="password" name="password" id="input">
                     <input type="text" name="id" id="id" value="{{id}}" style="display:none" readonly>
                     <input type="submit" id="submit"> </fieldset>
             </form>

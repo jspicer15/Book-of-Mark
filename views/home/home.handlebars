@@ -19,9 +19,9 @@
             </nav>
         </header>
         <ul>
-            <p id="expList">Today's Top Experiences</p>{{#each experiences}}
-            <li>
-                <p>{{experience}}</p>
+            <p id = "tops">Today's Top Experiences </p>{{#each experiences}}
+            <li class="expList">
+                <p><a href="/experience/{{_id}}">{{name}}</a> {{likes}}</p>
             </li> {{/each}} </ul>
     </div>
     <footer>

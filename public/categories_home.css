@@ -1,0 +1,53 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+header {
+    background-color: MediumSeaGreen;
+}
+
+footer {
+    background-color: beige;
+    text-align: center;
+}
+
+label {
+    float: left;
+    text-align: right;
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+nav {
+    margin-bottom: 1em;
+}
+
+nav ul {
+    margin: 0em;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 1em;
+}
+
+#cat {
+    font-weight: bold;
+    text-align: center;
+    font-size: 150%;
+}
+
+.catList {
+    float: left;
+}

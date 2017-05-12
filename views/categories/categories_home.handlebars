@@ -20,8 +20,8 @@
             </nav>
         </header>
         <ul>
-            <p class="categoryList">Categories: </p>{{#each experiences}}
-            <li>
+            <p id = "cat">Categories: </p>{{#each experiences}}
+            <li class="catList">
                 <p><a href="/experience/{{_id}}">{{name}}</a> {{likes}}</p>
             </li> {{/each}} </ul>
     </div>
