@@ -30,7 +30,7 @@ var exportedMethods = {
         return categories().then((categoryCollection) => {
             return categoryCollection.findOne({_id : id}).then((categories) => {
                 if (!categories) throw "category not found";
-                return categoryCollection;
+                return categories;
             });
         });
     }
