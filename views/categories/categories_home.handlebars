@@ -20,9 +20,9 @@
             </nav>
         </header>
         <ul>
-            <p id = "cat">Categories: </p>{{#each experiences}}
+            <p id = "cat">Categories:</p>{{#each categories}}
             <li class="catList">
-                <p><a href="/experience/{{_id}}">{{name}}</a> {{likes}}</p>
+                <p><a href="/categoryList/{{_id}}">{{name}}</a> {{likes}}</p>
             </li> {{/each}} </ul>
     </div>
     <div>
