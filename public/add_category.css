@@ -1,0 +1,60 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+header {
+    background-color: MediumSeaGreen;
+}
+
+footer {
+    background-color: beige;
+    text-align: center;
+}
+
+label {
+    float: left;
+    text-align: right;
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+nav {
+    margin-bottom: 1em;
+}
+
+fieldset {
+    border: 1px solid;
+    padding-top: 0em;
+}
+
+legend {
+    padding: 0.2em 0.2em;
+    border: 1px solid;
+    font-size: 90%;
+    text-align: right;
+}
+
+nav ul {
+    margin: 0em;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 1em;
+}
+
+#input {
+    display: flex;
+    margin-bottom: 1em;
+}
