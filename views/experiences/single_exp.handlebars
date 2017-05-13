@@ -28,6 +28,32 @@
                 <p>{{text}}</p>
             </li>
         {{/each}}</ul>
+        <form action="http://localhost:3000/experience/{{experience._id}}/add_review" method="POST">
+            <fieldset>
+                <legend>Review This Experience</legend>
+                <input type="text" name="id" id="id" value="{{id}}" style="display:none" readonly>
+                <label for="review_title">Please Give your Review a Title: </label>
+                <input type="text" name="review_title" id = "input" required>
+                <label for="review_text">Describe Your Experience Here: </label>
+                <input type="text" name="review_text" id = "input" required>
+                <label for="rating">How Would you Rate your Experience? </label>
+                <select name="rating" id = "input">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <label for="review_date"> Date of Experience: </label>
+                <input type="date" name="review_date" id = "input" required>
+                <input type="submit" id="submit">
+            </fieldset>
+        </form>
     </div>
     <footer>
         <p>Book of Mark Copyright 2017</p>

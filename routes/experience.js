@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const data = require("../data");
 const experienceData = data.experiences;
 const categoryData = data.categories;
+const uuid = require('node-uuid');
 
 router.use(bodyParser.urlencoded({
     extended: true
@@ -82,11 +83,49 @@ router.get("/:experienceId/downvote", (req, res) => {
     }
 });
 
+router.post("/:experienceId/add_review", (req, res) => {
+    try {
+        var postData = req.body;
+        
+        experienceData.getExperienceById(req.params.experienceId).then((experience) => {
+        var newReview = {
+            _id: uuid.v4(),
+            user: "",
+            text: postData.review_text,
+            rating: postData.rating,
+            title: postData.review_title,
+            likes: 0,
+            createdOn: new Date().getTime(),
+            dateOf: postData.review_date 
+        };
+        
+        var reviews = experience.reviews;
+        reviews.push(newReview);
+        var newData = {
+            _id: experience._id,
+            name: experience.name,
+            category: experience.category,
+            addedOn: experience.addedOn,
+            reviews: reviews,
+            likes: experience.likes
+        };
+            console.log(newData);
+            experienceData.updateExperience(newData).then((result) => {
+                return result;
+            });
+        });
+        res.redirect('/experience/' + req.params.experienceId);
+    }
+    catch (err) {
+        res.status(500).send('Server Error:' + err);
+    }
+});
+
 router.post("/add", (req, res) => {
     var postData = req.body;
-    var id = postData.id;
+    var id = req.user._id;
     try {
-        experienceData.newExperience(postData.title, postData.categories, postData.review_text, postData.rating, postData.review_title,   postData.review_date, postData.id);
+        experienceData.newExperience(postData.title, postData.categories, postData.review_text, postData.rating, postData.review_title,   postData.review_date, id);
         res.redirect("/experience");
 }
     catch (err) {
