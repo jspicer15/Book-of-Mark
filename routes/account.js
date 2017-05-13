@@ -100,6 +100,9 @@ router.post("/login", passport.authenticate('local', {successRedirect: '/account
                                                      failureFlash: true}));
 
 router.post("/update", (req, res) => {
+    if (!req.user) {
+        return res.redirect('/account');
+    }
     var postData = req.body;
     var id = postData.id;
     var newProf = {

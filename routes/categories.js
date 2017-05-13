@@ -10,6 +10,9 @@ router.use(bodyParser.urlencoded({
 }));
 
 router.get("/", (req, res) => {
+    if (!req.user) {
+        return res.redirect('/account');
+    }
     try {
         categoryData.getAllCategories().then((categoryList) => {
             console.log(categoryList);
@@ -22,6 +25,9 @@ router.get("/", (req, res) => {
 });
 
 router.get("/add", (req, res) => {
+    if (!req.user) {
+        return res.redirect('/account');
+    }
     try {
         categoryData.getAllCategories().then((categoryList) => {
             console.log(categoryList);
@@ -34,6 +40,9 @@ router.get("/add", (req, res) => {
 });
 
 router.get("/:categoryId", (req, res) => {
+   if (!req.user) {
+        return res.redirect('/account');
+    }
     try {
         categoryData.getCategoryById(req.params.categoryId).then((category) => {
             experienceData.getExperienceByCategory(category.name).then((experienceList) => {
@@ -47,6 +56,9 @@ router.get("/:categoryId", (req, res) => {
 });
 
 router.post("/", (req, res) => {
+    if (!req.user) {
+        return res.redirect('/account');
+    }
     var postData = req.body;
     try {
        categoryData.newCategory(postData.title, postData.parent, postData.description);

@@ -11,6 +11,9 @@ router.use(bodyParser.urlencoded({
 }));
 
 router.get("/", (req, res) => {
+    if (!req.user) {
+        return res.redirect('/account');
+    }
     try {
             categoryData.getAllCategories().then((categoryList) => {
 
@@ -24,6 +27,9 @@ router.get("/", (req, res) => {
 
 
 router.get("/:experienceId", (req, res) => {
+    if (!req.user) {
+        return res.redirect('/account');
+    }
     try {
  experienceData.getAllReviews(req.params.experienceId).then((reviews) => {
   experienceData.getExperienceById(req.params.experienceId).then((experience) => {
@@ -38,6 +44,9 @@ router.get("/:experienceId", (req, res) => {
 });
 
 router.get("/:experienceId/upvote", (req, res) => {
+    if (!req.user) {
+        return res.redirect('/account');
+    }
     try {
         experienceData.getExperienceById(req.params.experienceId).then((experience) => {
             var likes = experience.likes + 1;
@@ -61,6 +70,9 @@ router.get("/:experienceId/upvote", (req, res) => {
 });
 
 router.get("/:experienceId/downvote", (req, res) => {
+    if (!req.user) {
+        return res.redirect('/account');
+    }
     try {
         experienceData.getExperienceById(req.params.experienceId).then((experience) => {
        var likes = experience.likes - 1;
@@ -84,6 +96,9 @@ router.get("/:experienceId/downvote", (req, res) => {
 });
 
 router.post("/:experienceId/add_review", (req, res) => {
+    if (!req.user) {
+        return res.redirect('/account');
+    }
     try {
         var postData = req.body;
         
@@ -122,6 +137,9 @@ router.post("/:experienceId/add_review", (req, res) => {
 });
 
 router.post("/add", (req, res) => {
+    if (!req.user) {
+        return res.redirect('/account');
+    }
     var postData = req.body;
     var id = req.user._id;
     try {
