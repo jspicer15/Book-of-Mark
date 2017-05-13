@@ -40,3 +40,24 @@ nav ul li {
     font-weight: normal;
     font-size: 120%;
 }
+
+#upButton {
+    width: 3em;
+    height: 3em;
+}
+
+#upImage {
+    width: 2em;
+    height: 2em;
+}
+
+#downButton {
+    width: 3em;
+    height: 3em;
+}
+
+#downImage {
+    width: 2em;
+    height: 2em;
+    transform: rotate(180deg);
+}
