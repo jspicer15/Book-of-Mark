@@ -102,6 +102,23 @@ var exportedMethods = {
     });
 });
 },
+    upvoteReview(id, likes) {
+        likes = likes + 1;
+        return experiences().then((expCollection) => {
+           return expCollection.findOneAndUpdate({'reviews._id': id}, {$set: {"reviews.$.likes" : likes}}).then((result) => {
+               return result;
+           }); 
+        });
+    },
+    downvoteReview(id, likes) {
+        likes = likes - 1;
+        return experiences().then((expCollection) => {
+           return expCollection.findOneAndUpdate({'reviews._id': id}, {$set: {"reviews.$.likes" : likes}}).then((result) => {
+               return result;
+           }); 
+        });
+    },
+    
     getExperienceByCategory(category) {
         return experiences().then((expCollection) => {
             return expCollection.find({category : category}).toArray();

@@ -31,8 +31,8 @@ router.get("/:experienceId", (req, res) => {
         return res.redirect('/account');
     }
     try {
- experienceData.getAllReviews(req.params.experienceId).then((reviews) => {
-  experienceData.getExperienceById(req.params.experienceId).then((experience) => {
+    experienceData.getAllReviews(req.params.experienceId).then((reviews) => {
+    experienceData.getExperienceById(req.params.experienceId).then((experience) => {
       console.log(experience);
             res.render('experiences/single_exp', {experience: experience, reviews: reviews});
         });
@@ -130,6 +130,39 @@ router.post("/:experienceId/add_review", (req, res) => {
             });
         });
         res.redirect('/experience/' + req.params.experienceId);
+    }
+    catch (err) {
+        res.status(500).send('Server Error:' + err);
+    }
+});
+
+router.get("/review/:reviewId/upvote/:numLikes", (req, res) => {
+    if (!req.user) {
+        return res.redirect('/account');
+    }
+    try {
+        var postData = req.body;
+        experienceData.upvoteReview(req.params.reviewId, parseInt(req.params.numLikes)).then((result) => {
+            
+           return res.redirect('/experience/' + result.value._id);
+        });
+    }
+    catch (err) {
+        res.status(500).send('Server Error:' + err);
+    }
+});
+
+
+router.get("/review/:reviewId/downvote/:numLikes", (req, res) => {
+    if (!req.user) {
+        return res.redirect('/account');
+    }
+    try {
+        var postData = req.body;
+        experienceData.downvoteReview(req.params.reviewId, parseInt(req.params.numLikes)).then((result) => {
+            
+           return res.redirect('/experience/' + result.value._id);
+        });
     }
     catch (err) {
         res.status(500).send('Server Error:' + err);

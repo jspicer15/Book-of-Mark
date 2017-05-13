@@ -24,8 +24,8 @@
         <h2>{{experience.name}}</h2>
         <ul> <h3>Reviews:</h3>
         {{#each reviews}}
-            <li><button onclick="location.href='/experience/review/{{_id}}/';" id = "upButton"><img src="/images/upvote.png" id = "upImage"></button>
-                <button onclick="location.href='/experience/{{_id}}/downvote';" id = "downButton"><img src="/images/upvote.png" id = "downImage"></button><h4>{{title}} {{likes}}</h4>
+            <li><button onclick="location.href='/experience/review/{{_id}}/upvote/{{likes}}';" id = "upButton"><img src="/images/upvote.png" id = "upImage"></button>
+                <button onclick="location.href='/experience/review/{{_id}}/downvote/{{likes}}';" id = "downButton"><img src="/images/upvote.png" id = "downImage"></button><h4>{{title}} {{likes}}</h4>
                 <p>{{text}}</p>
             </li>
         {{/each}}</ul>
