@@ -8,6 +8,9 @@ router.use(bodyParser.urlencoded({
 }));
 
 router.get("/", (req, res) => {
+    if (!req.user) {
+       return res.redirect('/account');
+    }
     try {
             res.render('home/home');
     }
