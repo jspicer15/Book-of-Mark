@@ -75,6 +75,7 @@ router.get("/:experienceId/downvote", (req, res) => {
                 return result;
             });
         });
+        res.redirect('/experience/' + req.params.experienceId);
     }
     catch (err) {
         res.status(500).send('Server Error:' + err);
