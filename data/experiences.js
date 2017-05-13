@@ -56,7 +56,12 @@ var exportedMethods = {
         }
     });
 });
-}
-}
+},
+    getExperienceByCategory(category) {
+        return experiences().then((expCollection) => {
+            return expCollection.find({category : category}).toArray();
+            });
+        }
+    }
 
 module.exports = exportedMethods;

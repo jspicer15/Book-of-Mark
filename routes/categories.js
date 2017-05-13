@@ -35,8 +35,10 @@ router.get("/add", (req, res) => {
 
 router.get("/:categoryId", (req, res) => {
     try {
-        categoryData.getCategoryById(req.params.categoryId).then((categoryList) => {
-            res.render('categories/single_category', {categories : categoryList});
+        categoryData.getCategoryById(req.params.categoryId).then((category) => {
+            experienceData.getExperienceByCategory(category.name).then((experienceList) => {
+                res.render('categories/single_category', {categories : category, experiences: experienceList});
+        });
         });
     }
     catch (err) {
