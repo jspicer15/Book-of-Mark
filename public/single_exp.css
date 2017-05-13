@@ -25,6 +25,24 @@ footer {
     text-align: center;
 }
 
+label {
+    float: left;
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+fieldset {
+    border: 1px solid;
+    padding-top: 0em;
+}
+
+legend {
+    padding: 0.2em 0.2em;
+    border: 1px solid;
+    font-size: 90%;
+    text-align: right;
+}
+
 nav ul {
     margin: 0em;
     text-align: center;
@@ -33,12 +51,6 @@ nav ul {
 nav ul li {
     display: inline-block;
     margin: 1em;
-}
-
-#desc {
-    text-align: center;
-    font-weight: normal;
-    font-size: 120%;
 }
 
 #upButton {
@@ -51,15 +63,20 @@ nav ul li {
     height: 1em;
 }
 
+
 #downButton {
     width: 2em;
     height: 2em;
     display: flex;
-    margin-bottom: 2em;
 }
 
 #downImage {
     width: 1em;
     height: 1em;
     transform: rotate(180deg);
+}
+
+#input {
+    display: flex;
+    margin-bottom: 1em;
 }
