@@ -44,6 +44,51 @@ var exportedMethods = {
             });
         });
     },
+    updateExperience(newExp) {
+        return experiences().then((expCollection) => {
+            return this.getExperienceById(newExp._id).then((oldExp) => {
+            var name, category, addedOn, reviews, likes;
+            
+            if (newExp.name) 
+                name = newExp.name;
+            else
+                name = oldExp.name;
+            
+            if (newExp.category)
+                category = newExp.category;
+            else
+                category = oldExp.category;
+            
+            if (newExp.reviews)
+                reviews = newExp.reviews;
+            else
+                reviews = oldExp.reviews;
+			
+            if (newExp.likes)
+                likes = newExp.likes;
+            else
+                likes = oldExp.likes;
+                
+            var newExpData = {
+				_id: oldExp._id,
+				name: name,
+				category: category,
+				reviews: reviews,
+				likes: likes
+			}
+
+            var updateCommand = {
+                $set: newExpData
+            };
+            
+            return expCollection.updateOne({_id: oldExp._id}, updateCommand).then((result) => {
+                return this.getExperienceById(newExpData._id).then((result) => {
+                    return result;
+                    });
+                });
+            });
+        });
+    },
     
     getAllReviews(id) {
     return experiences().then((expCollection) => {

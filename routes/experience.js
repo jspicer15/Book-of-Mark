@@ -26,9 +26,55 @@ router.get("/:experienceId", (req, res) => {
     try {
  experienceData.getAllReviews(req.params.experienceId).then((reviews) => {
   experienceData.getExperienceById(req.params.experienceId).then((experience) => {
+      console.log(experience);
             res.render('experiences/single_exp', {experience: experience, reviews: reviews});
         });
     }); 
+    }
+    catch (err) {
+        res.status(500).send('Server Error:' + err);
+    }
+});
+
+router.get("/:experienceId/upvote", (req, res) => {
+    try {
+        experienceData.getExperienceById(req.params.experienceId).then((experience) => {
+            var likes = experience.likes + 1;
+        var upvoted = {
+            _id: experience._id,
+            name: experience.name,
+            category: experience.category,
+            addedOn: experience.addedOn,
+            reviews: experience.reviews,
+            likes: likes
+        };
+            experienceData.updateExperience(upvoted).then((result) => {
+                return result;
+            });
+        });
+        res.redirect('/experience/' + req.params.experienceId);
+    }
+    catch (err) {
+        res.status(500).send('Server Error:' + err);
+    }
+});
+
+router.get("/:experienceId/downvote", (req, res) => {
+    try {
+        experienceData.getExperienceById(req.params.experienceId).then((experience) => {
+       var likes = experience.likes - 1;
+        var upvoted = {
+            _id: experience._id,
+            name: experience.name,
+            category: experience.category,
+            addedOn: experience.addedOn,
+            reviews: experience.reviews,
+            likes: likes
+        };
+            experienceData.updateExperience(upvoted).then((result) => {
+                return result;
+            });
+        });
     }
     catch (err) {
         res.status(500).send('Server Error:' + err);
@@ -46,4 +92,5 @@ router.post("/add", (req, res) => {
         res.status(500).send('Server Error:' + err);
     }
 });
+
 module.exports = router;
