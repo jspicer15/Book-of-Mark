@@ -24,8 +24,8 @@
         <h3>Experiences in this Category: </h3>
         <ul class = "expList">
             {{#each experiences}}
-            <li><button href="/experience/{{_id}}/upvote"></button>
-                <button href="/experience/{{_id}}/downvote"></button><a href="/experience/{{_id}}">{{name}}</a></li>
+            <li><button href="/experience/{{_id}}/upvote"><img src="/images/upvote.png" style="width:50px; height: 50px;"></button>
+                <button href="/experience/{{_id}}/downvote"><img src="/images/upvote.png" style="-webkit-transform: rotate(180deg); width:50px; height:50px;"></button><a href="/experience/{{_id}}">{{name}}</a></li>
             {{/each}}
         </ul>
     </div>
