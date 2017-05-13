@@ -25,7 +25,8 @@
         <ul class = "expList">
             {{#each experiences}}
             <li><button onclick="location.href='/experience/{{_id}}/upvote';" id = "upButton"><img src="/images/upvote.png" id = "upImage"></button>
-                <button onclick="location.href='/experience/{{_id}}/downvote';" id = "downButton"><img src="/images/upvote.png" id = "downImage"></button><a href="/experience/{{_id}}">{{name}}</a> {{likes}}</li>
+                <a href="/experience/{{_id}}" id = "name">{{name}}</a> {{likes}}
+                <button onclick="location.href='/experience/{{_id}}/downvote';" id = "downButton"><img src="/images/upvote.png" id = "downImage"></button></li>
             {{/each}}
         </ul>
     </div>
