@@ -16,6 +16,10 @@ header {
     background-color: MediumSeaGreen;
 }
 
+h1 {
+    text-align: center;
+}
+
 footer {
     background-color: beige;
     text-align: center;
@@ -29,9 +33,4 @@ nav ul {
 nav ul li {
     display: inline-block;
     margin: 1em;
-}
-
-#tops {
-    font-weight: bold;
-    text-align: center;
 }
