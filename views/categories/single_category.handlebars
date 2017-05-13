@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/single_category.css">
-    <title>{{categoryList.name}} - Book of Mark</title>
+    <title>{{categories.name}} - Book of Mark</title>
 </head>
 
 <body>
@@ -20,6 +20,16 @@
             </nav>
         </header>
         <h1>{{categories.name}}</h1>
+        <h2 id = "desc">{{categories.desc}}</h2>
+        <h3>Experiences in this Category: </h3>
+        <ul class = "expList">
+            {{#each experiences}}
+            <li>{{experience}}</li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class = "add">
+        <p>Add an experience in this category here. <a href="/experience" id = "expButton"><button>Add Experience</button></a></p>
     </div>
     <footer>
         <p>Book of Mark Copyright 2017</p>

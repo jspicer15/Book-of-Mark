@@ -16,6 +16,10 @@ header {
     background-color: MediumSeaGreen;
 }
 
+h1 {
+    text-align: center;
+}
+
 footer {
     background-color: beige;
     text-align: center;
@@ -29,4 +33,10 @@ nav ul {
 nav ul li {
     display: inline-block;
     margin: 1em;
+}
+
+#desc {
+    text-align: center;
+    font-weight: normal;
+    font-size: 120%;
 }
